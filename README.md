@@ -4,6 +4,7 @@ Useful snippets, obscure features, etc.
 
 ## Enums interfaces and Multiple Bounded Type Parameters
 
+```java
     public interface MarkerInterface { ... }
     
     public enum CoolEnum implements MarkerInterface { FOO, BAR }
@@ -12,3 +13,4 @@ Useful snippets, obscure features, etc.
     
     func(CoolEnum.FOO) // compiles
     func(AnotherEnum.FOO) // does not compile
+```
