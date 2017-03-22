@@ -2,7 +2,7 @@
 
 Useful snippets, obscure features, etc.
 
-## Enums interfaces and Multiple Bounded Type Parameters
+## Enums, interfaces, and Multiple Bounded Type Parameters
 
 ```java
     public interface MarkerInterface { ... }
