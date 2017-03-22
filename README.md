@@ -9,7 +9,9 @@ Useful snippets, obscure features, etc.
     
     public enum CoolEnum implements MarkerInterface { FOO, BAR }
     
-    public <T extends Enum & MarkerInterface> void func(T param) { .. }
+    public <T extends Enum & MarkerInterface> void func(T param) { 
+        System.out.prinln(param.name());
+    }
     
     func(CoolEnum.FOO) // compiles
     func(AnotherEnum.FOO) // does not compile
