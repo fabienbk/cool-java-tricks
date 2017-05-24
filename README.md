@@ -30,4 +30,12 @@ Useful snippets, obscure features, etc.
     )
     .parallel()
     .forEach(Runnable::run);
+    
+    // Or this is you need to block until completion
+    Stream.<Function>of(
+            () -> slowFunction(...),
+            () -> slowFunction2(...)
+    )
+    .parallel()
+    .collect(Collectors.toList());
 ```
