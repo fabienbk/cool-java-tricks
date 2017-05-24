@@ -16,7 +16,7 @@ Useful snippets, obscure features, etc.
     func(CoolEnum.FOO) // compiles
     func(AnotherEnum.FOO) // does not compile
 ```
-## Poor man's async keyword
+## Poor man's async keyword (aka ForkJoin Light^TM)
 
 ```java
     // Want to parallelize this without any bells and whistles ?
