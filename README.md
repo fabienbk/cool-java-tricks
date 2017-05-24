@@ -16,3 +16,18 @@ Useful snippets, obscure features, etc.
     func(CoolEnum.FOO) // compiles
     func(AnotherEnum.FOO) // does not compile
 ```
+## Poor man's async functions
+
+```java
+    // Want to parallelize this without any bells and whistles ?
+    slowFunction(..);
+    slowFunction2(..);
+    
+    // Try this:
+    Stream.<Runnable>of(
+            () -> slowFunction(...),
+            () -> slowFunction2(...)
+    )
+    .parallel()
+    .forEach(Runnable::run);
+```
