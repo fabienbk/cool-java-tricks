@@ -16,7 +16,7 @@ Useful snippets, obscure features, etc.
     func(CoolEnum.FOO) // compiles
     func(AnotherEnum.FOO) // does not compile
 ```
-## Poor man's async functions
+## Poor man's async keyword
 
 ```java
     // Want to parallelize this without any bells and whistles ?
@@ -24,18 +24,17 @@ Useful snippets, obscure features, etc.
     slowFunction2(..);
     
     // Try this:
-    Stream.<Runnable>of(
-            () -> slowFunction(...),
-            () -> slowFunction2(...)
-    )
-    .parallel()
-    .forEach(Runnable::run);
+    private <T> List<T> async(Supplier<T>... o) {
+        return Arrays.stream(o).parallel().map(f -> f.get()).collect(Collectors.toList());
+    }
+
+    private void async(Runnable... o) {
+        Arrays.stream(o).parallel().map(r -> {
+            r.run();
+            return null;
+        }).collect(Collectors.toList());
+    }
     
-    // Or this is you need to block until completion
-    Stream.<Function>of(
-            () -> slowFunction(...),
-            () -> slowFunction2(...)
-    )
-    .parallel()
-    .collect(Collectors.toList());
+    async(() -> slowFunction(...),
+          () -> slowFunction2(...));
 ```
