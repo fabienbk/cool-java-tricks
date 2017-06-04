@@ -38,3 +38,14 @@ Useful snippets, obscure features, etc.
     async(() -> slowFunction(...),
           () -> slowFunction2(...));
 ```
+## Double-braced initialization
+
+```java
+    new ArrayList<String>() {{
+        add("hello");
+        add("world");
+    }};
+```
+
+
+
