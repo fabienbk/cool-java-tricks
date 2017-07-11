@@ -1,6 +1,6 @@
 # Cool Java Tricks
 
-Useful snippets, obscure features, etc.
+Useful snippets, obscure features, etc. Almost always a bad idea, but fun nonetheless.
 
 ## Enums, interfaces, and Multiple Bounded Type Parameters
 
