@@ -47,5 +47,10 @@ Useful snippets, obscure features, etc.
     }};
 ```
 
+## Who needs a main() entry point ?
 
-
+```java
+    public class Application {static{
+        System.out.print("Hello World");
+    }}
+```
