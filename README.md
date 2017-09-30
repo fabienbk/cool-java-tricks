@@ -47,7 +47,7 @@ Useful snippets, obscure features, etc. Almost always a bad idea, but fun noneth
     }};
 ```
 
-## Who needs a main() entry point ?
+## Who needs a main() entry point ? (edit: does not work anymore on Java 7+)
 
 ```java
     public class Application {static{
